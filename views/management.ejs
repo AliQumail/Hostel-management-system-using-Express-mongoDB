@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Document</title>
+  </head>
+  <body>
+    <%-include("partials/header");-%>
+
+    <table class="table container table-responsive mb-5">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+
+          <th scope="col">Room Size</th>
+          <th scope="col">Bath Type</th>
+          <th scope="col">Room Id</th>
+          <th scope="col">Seat Id</th>
+
+          <th scope="col">Start</th>
+          <th scope="col">End</th>
+          <th scope="col">Fee Due (Rs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach( (user,idx) => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phoneNumber %></td>
+
+          <td><%= user.roomSize%></td>
+          <td><%= user.bathType %></td>
+          <td><%= user.roomId %></td>
+          <td><%= user.seatId %></td>
+
+          <td><%= user.startMonth%>, <%=user.startYear%></td>
+          <td><%= user.endMonth%>, <%= user.endYear %></td>
+          <td><%= user.feePaid %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+<div class="foot mt-5">
+    <%-include("partials/footer");-%>
+ 
+</div>
+  </body>
+</html>

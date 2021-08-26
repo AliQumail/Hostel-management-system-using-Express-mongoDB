@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Hostel</title>
+</head>
+<body>
+    <%-include("partials/header");-%>
+    <div class="container font-italic font-weight-light w-75 m-auto ">
+
+        <table class="table mt-5 table-responsive-sm">
+            <thead>
+              <tr class="bg-warning">
+                <th scope="col">Room Size</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Attach Bath</th>
+                <th scope="col">Common Bath</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Large</th>
+                <td>4</td>
+                <td>Rs 15,000</td>
+                <td>Rs 12,000</td>
+              </tr>
+              <tr>
+                <th scope="row">Medium</th>
+                <td>2</td>
+                <td>Rs 18,000</td>
+                <td>Rs 14,000</td>
+              </tr>
+              <tr>
+                <th scope="row">Small</th>
+                <td>1</td>
+                <td>Rs 25,000</td>
+                <td>Rs 18,000</td>
+              </tr>
+            </tbody>
+          </table>
+           
+     <form action="/booking" method="post" class="mt-5">
+
+        <div class="form-group ">
+            <label for="exampleFormControlSelect1">Select room size</label>
+            <select class="form-control" name="roomSize" id="exampleFormControlSelect1">
+              <option value="large" >Large</option>
+              <option value="medium">Medium</option>
+              <option value="small" >Small</option>
+              
+            </select>
+          </div>
+   
+          <div class="form-group mt-4">
+            <label for="exampleFormControlSelect1">Select bath type</label>
+            <select class="form-control" name="bathType" id="exampleFormControlSelect1">
+              <option value="attachBath">Attach Bath</option>
+              <option value="commonBath">Common Bath</option>
+              
+            </select>
+
+            
+          </div>
+<!-- Operation -->
+
+<div class="form-group mt-4 ">
+    <label for="exampleFormControlSelect1">Select start month</label>
+    <select class="form-control" name="startMonth" id="exampleFormControlSelect1">
+      <%  months.forEach( (month,idx) => { %>
+          <option value=<%=month%> > <%= month %></option>
+    <%  })   %>
+      
+    </select>
+
+    
+  </div>
+
+  <div class="form-group mt-4">
+    <label for="exampleFormControlSelect1">Select start year</label>
+    <select class="form-control" name="startYear" id="exampleFormControlSelect1">
+      <option value="2021" >2021</option>
+      
+      
+    </select>
+
+    
+  </div>
+
+
+
+  <div class="form-group mt-4">
+    <label for="exampleFormControlSelect1">Select ending month</label>
+    <select class="form-control" name="endMonth" id="exampleFormControlSelect1">
+      <%  months.forEach( (month,idx) => { %>
+          <option value=<%=month%> > <%= month %></option>
+    <%  })   %>
+      
+    </select>
+
+    
+  </div>
+
+
+
+  <div class="form-group mt-4">
+    <label for="exampleFormControlSelect1">Select ending Year</label>
+    <select class="form-control" name="endYear" id="exampleFormControlSelect1">
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      
+    </select>
+
+    
+  </div>
+<!-- Operation -->
+
+
+        <div class="form-group mt-4">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Eg Abdullah">
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email"  name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+
+          <div class="form-group mt-4">
+            <label for="exampleFormControlInput1">Phone Number</label>
+            <input type="number" name="phoneNumber" class="form-control" id="exampleFormControlInput1" placeholder="23094243">
+          </div>
+
+          <button type="submit" class="btn btn-primary mb-5" >Submit</button>
+
+     </form>
+
+
+
+
+
+
+    </div>
+    
+
+    <%-include("partials/footer");-%>
+</body>
+</html>

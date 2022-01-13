@@ -4,6 +4,10 @@
 
 # Hostel-management-system-using-Express-mongoDB
 
+Install Node, clone and run the repo on vs code ( preferred )
+type "npm install" command in the terminal inside the main folder
+to run the code type "node app.js"
+
 - Fully responsive
 - connected to a database 
 - validations implemented ( No duplicate entries, Start date < end date, Invalid information e.t.c )
